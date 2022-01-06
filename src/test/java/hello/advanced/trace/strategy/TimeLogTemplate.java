@@ -1,21 +1,17 @@
-package hello.advanced.trace.strategy.code.strategy;
+package hello.advanced.trace.strategy;
 
+import hello.advanced.trace.strategy.code.template.Callback;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class ContextV1 {
+public class TimeLogTemplate {
 
-    private Strategy  strategy;
-
-    public ContextV1(Strategy strategy){
-        this.strategy = strategy;
-    }
-
-    public void execute(){
+    public void execute(Callback callback){
         long startTime = System.currentTimeMillis();
-        strategy.call();
+        callback.call();
         long endTime = System.currentTimeMillis();
         long resultTime = endTime - startTime;
         log.info("result time={}", resultTime);
     }
 }
+
