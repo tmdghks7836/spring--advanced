@@ -10,4 +10,10 @@ public class BImpl implements BInterface{
         log.info("call B");
         return "b";
     }
+
+    @Override
+    public String callcall() {
+        log.info("call Bcdcdcd");
+        return "b";
+    }
 }
